@@ -6,3 +6,5 @@
 *.temp
 *.pyc
 tmp/
+#*#
+__pycache__/
