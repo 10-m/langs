@@ -2,12 +2,12 @@ def mul(a, b):
     ''' multipy '''
     return a * b
 
-print(mul(10,20))
+print(mul(10, 20))
 help(mul)
 
 def fact(n):
     if n == 0:
-        return 1;
+        return 1
     else:
         return n * fact(n - 1)
 
@@ -18,7 +18,7 @@ def record(name="Unknown", id=0):
 
 record()
 record("foo", 100)
-record(name = "bar", id = 200)
+record(name="bar", id=200)
 
 def sum_args(*args):
     print(args)
@@ -27,12 +27,12 @@ def sum_args(*args):
         a += n
     return a
 
-print(sum_args(1,2,3))
+print(sum_args(1, 2, 3))
 
 def print_args_dict(**args):
     print(args)
 
-print_args_dict(a = 30, b = 50, c = 40)
+print_args_dict(a=30, b=50, c=40)
 
 def mul_func(a, b):
     return a * b

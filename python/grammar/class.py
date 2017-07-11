@@ -3,6 +3,7 @@
 
 import math
 
+
 class CalcFee:
     def __init__(self):
         self.shipping_fee = 1000
@@ -35,6 +36,7 @@ class Cat:
     def naku2(self):
         print(self.nakigoe)
 
+
 mike = Cat()
 mike.naku()
 
@@ -50,3 +52,7 @@ nora.naku2()
 mike.nakigoe = "mew"
 mike.naku2()
 nora.naku2()
+
+x = {'a': 37, 'b': 42, 'c': 927}
+
+y = {'a': 37, 'b': 42, 'c': 927}

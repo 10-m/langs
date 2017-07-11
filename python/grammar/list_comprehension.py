@@ -4,11 +4,11 @@ for i in range(1, 6):
 print(data)
 
 data = []
-data = [ i * 2 for i in range(1, 6)]
+data = [i * 2 for i in range(1, 6)]
 print(data)
 
 data = []
-data = list(map(lambda x : x * 2, range(1, 6)))
+data = list(map(lambda x: x * 2, range(1, 6)))
 print(data)
 
 data = []
