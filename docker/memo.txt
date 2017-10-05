@@ -1,0 +1,46 @@
+#!/bin/bash
+
+docker run debian:latest /bin/echo 'hello world'
+docker pull centos:7
+docker images
+docker inspect
+docker run -it --name "test1" centos /bin/cal
+docker run -d centos /bin/ping localhost
+docker logs
+docker stop
+docker run -it --hostname=www.test.com --add-host=node1.test.com:192.168.1.1 centos
+docker ps -a
+docker run -it --name 'test1' centos /bin/bash
+Ctrl-P Ctrl-Q # dettach
+docker exec -it test1 /bin/ping localhost
+docker top test1
+docker port test1
+docker rename test1 test2
+docker cp test2:/etc/passwd /tmp/test_passwd
+docker diff test2
+docker version
+docker info
+docker commit -a 'test_author' <id> test_author/test_image:1.0
+docker export <container id> > tmp.tar
+cat tmp.tar | docker import - test_image2:1.0
+docker save -o tmp2.tar test_image2
+docker build -t sample:1.0 ./
+docker images
+docker search registry
+docker pull registry:2.0
+docker images registry
+docker run -d -p 5000:5000 registry:2.0
+# edit Dockerfile.registry
+cat Dockerfile.registry | docker build -t test_registry -
+docker tag test_registry localhost:5000/test_registry_tag
+docker images
+docker push localhost:5000/test_registry_tag
+docker rmi test_registry localhost:5000/test_registry_tag
+docker pull localhost:5000/test_registry_tag
+docker images
+
+docker run -d --name test_server postgres
+docker run -it --name test_client --link test_server:pg  centos /bin/bash
+$ set | grep PG
+$ cat /etc/hosts
+

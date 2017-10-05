@@ -1,0 +1,22 @@
+# http://qiita.com/TsutomuNakamura/items/6124ab7d32a58bc93ac7
+# http://qiita.com/RyoMa_0923/items/c0ec81d4d0d491a62777
+# http://qiita.com/TsutomuNakamura/items/6124ab7d32a58bc93ac7
+# http://qiita.com/RyoMa_0923/items/eb827c5633c87c885a31
+
+_ADVERTISE=$(ip address show dev eth1 | awk '$0~/inet/{print $2}' | sed 's!/.*!!')
+docker swarm init --advertise-addr=$_ADVERTISE --listen-addr=0.0.0.0:2377
+docker swarm join-token manager
+docker swarm join-token worker
+# showen "docker swarm join --token xxxxxx192.168.3.14:2377"
+docker swarm join --token xxxxxx192.168.3.14:2377
+docker node list
+docker info
+# ---
+# Swarm: active
+# ...
+docker service create -p 12345:80 --name="nginx_sample" --replicas=3 nginx
+docker service ls
+
+docker node ls
+docker node rm
+docker swarm leave -f
