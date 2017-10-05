@@ -1,0 +1,489 @@
+$ python3
+Python 3.4.5 (default, May 29 2017, 15:17:55) 
+[GCC 4.8.5 20150623 (Red Hat 4.8.5-11)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>  print(r'C:\some\name')
+  File "<stdin>", line 1
+    print(r'C:\some\name')
+    ^
+IndentationError: unexpected indent
+>>> print(r'C:\some\name')
+C:\some\name
+>>> print("""\
+   Usage: thingy [OPTIONS]
+       -h                        Display this usage message
+       -H hostname               Hostname to connect to
+   """)
+... ... ... ...    Usage: thingy [OPTIONS]
+       -h                        Display this usage message
+       -H hostname               Hostname to connect to
+   
+>>> 3 * 'un' + 'ium'
+'unununium'
+>>> 'Py' 'thon'
+'Python'
+>>> text = (' カッコの中にながいながいながい文字列を '
+               ' 入れておいて繋げてやろう。')
+... >>> 
+>>> text
+' カッコの中にながいながいながい文字列を  入れておいて繋げてやろう。'
+>>> prefix + 'thon'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'prefix' is not defined
+>>> prefix = 'Py'
+>>> prefix + 'thon'
+'Python'
+>>> word = 'Python'
+>>> word[0]]
+  File "<stdin>", line 1
+    word[0]]
+           ^
+SyntaxError: invalid syntax
+>>> word[0]
+'P'
+>>> wor[[0:2]
+  File "<stdin>", line 1
+    wor[[0:2]
+          ^
+SyntaxError: invalid syntax
+>>> wor[0:2]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'wor' is not defined
+>>> word[0:2]
+'Py'
+>>> word[:2]
+'Py'
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[-3:]
+[9, 16, 25]
+>>> squares + [36, 49, 64, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+>>> cubes = [1, 8, 27, 65, 125]
+>>> cubes[3] = 64 
+>>> cubes
+[1, 8, 27, 64, 125]
+>>> cubes.append(216)
+>>> cubes
+[1, 8, 27, 64, 125, 216]
+>>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> letters
+['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> letters[2:5] = ['C', 'D', 'E']
+>>> letters
+['a', 'b', 'C', 'D', 'E', 'f', 'g']
+>>> letters[2:5] = []
+>>> letters
+['a', 'b', 'f', 'g']
+>>> letters[:] = []
+>>> x[[1,2,3], ['a','b','c']]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> x=[[1,2,3], ['a','b','c']]
+>>> x
+[[1, 2, 3], ['a', 'b', 'c']]
+>>> x[0]]
+  File "<stdin>", line 1
+    x[0]]
+        ^
+SyntaxError: invalid syntax
+>>> x[0]
+[1, 2, 3]
+>>> x[0][1]
+2
+>>> while b < 10:
+...     print(b))
+  File "<stdin>", line 2
+    print(b))
+            ^
+SyntaxError: invalid syntax
+>>> while b < 10:
+...     print(b)
+...     a,b=b,a+b
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
+>>> a,b=0,1
+>>> while b < 10:
+...     print(b)
+...     a,b=b,a+b
+... 
+1
+1
+2
+3
+5
+8
+>>> i=256*256
+>>> print('this is', i)
+this is 65536
+>>> print('this is', i, end='')
+this is 65536>>> 
+>>> 
+>>> x = int(input("xxx:"))
+xxx:43
+>>> if x < 0;
+  File "<stdin>", line 1
+    if x < 0;
+            ^
+SyntaxError: invalid syntax
+>>> if x < 0:
+...     x = 0
+... elif x == 0
+  File "<stdin>", line 3
+    elif x == 0
+              ^
+SyntaxError: invalid syntax
+>>> elif x == 0:
+  File "<stdin>", line 1
+    elif x == 0:
+       ^
+SyntaxError: invalid syntax
+>>> 
+>>> 
+>>> 
+>>> 
+>>> words = ['cat', 'window']
+>>> for w in words:
+...     print(w, len(x))
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+TypeError: object of type 'int' has no len()
+>>> for w in words:
+...     print(w, len(w))
+... 
+cat 3
+window 6
+>>> for i in range(5):
+...     print(i)
+... 
+0
+1
+2
+3
+4
+>>> lint(range(5))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'lint' is not defined
+>>> list(range(5))
+[0, 1, 2, 3, 4]
+>>> while True:
+...     sleep(1)
+...     pass
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'sleep' is not defined
+>>> import time
+>>> while True:
+...     sleep(1)
+...     pass
+... 
+Traceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+NameError: name 'sleep' is not defined
+>>> while True:
+...     time.sleep(1)
+...     pass
+... 
+  C-c C-cTraceback (most recent call last):
+  File "<stdin>", line 2, in <module>
+KeyboardInterrupt
+>>> def fib(n):
+...     """hoge"""
+...     a,b=0,1
+...     while a<n:
+...         print(a, end=' ')
+...         a,b=b,a+b
+...     print()
+... 
+>>> 
+>>> fib(2000)
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 
+>>> 1*3
+3
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print("-- This parrot wouldn't", action, end=' ')
+... parrot(1000) 
+  File "<stdin>", line 3
+    parrot(1000) 
+         ^
+SyntaxError: invalid syntax
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print("-- This parrot wouldn't", action, end=' ')
+...     print("if you put", voltage, "volts through it.")
+...     print("-- Lovely plumage, the", type)
+...     print("-- It's", state, "!")
+... 
+>>> parrot(1000)
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot(voltage=1000) 
+-- This parrot wouldn't voom if you put 1000 volts through it.
+-- Lovely plumage, the Norwegian Blue
+-- It's a stiff !
+>>> parrot()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: parrot() missing 1 required positional argument: 'voltage'
+>>> parrot(voltage=5.0, 'dead')
+  File "<stdin>", line 1
+SyntaxError: non-keyword arg after keyword arg
+>>> list(range([3,6]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'list' object cannot be interpreted as an integer
+>>> list(range(*[3,6]))
+[3, 4, 5]
+>>> d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+>>> **d
+  File "<stdin>", line 1
+    **d
+     ^
+SyntaxError: invalid syntax
+>>> *d
+  File "<stdin>", line 1
+SyntaxError: can use starred expression only as assignment target
+>>> print(*d)
+action state voltage
+>>> print(**d)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'action' is an invalid keyword argument for this function
+>>> def x(n):
+...     return lambda x: x + n
+... 
+>>> f = x(42)
+>>> f(0)
+42
+>>> f(1)
+43
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs.sort(key=lambda pair: pair[1])
+>>> pairs
+[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
+>>> def my_func():
+...      """ xxxx
+... 
+... 
+...      yyyy
+...      """
+...      pass
+... 
+>>> print(my_function.__doc__)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_function' is not defined
+>>> print(my_func.__doc__)
+ xxxx
+
+
+     yyyy
+     
+>>> def f(ham: str, eggs: str = 'eggs') -> str:
+...     print("Annotations:", f.__annotations__)
+...     print("Arguments:", ham, eggs)
+...     return ham + ' and ' + eggs
+... 
+>>> f('spam')
+Annotations: {'ham': <class 'str'>, 'return': <class 'str'>, 'eggs': <class 'str'>}
+Arguments: spam eggs
+'spam and eggs'
+>>> f.__annotations__
+{'ham': <class 'str'>, 'return': <class 'str'>, 'eggs': <class 'str'>}
+>>> a = [66.25, 333, 333, 1, 1234.5]
+>>> a.count(333)
+2
+>>> a.count('x')
+0
+>>> a.insert(2,-1)
+>>> a
+[66.25, 333, -1, 333, 1, 1234.5]
+>>> a.ppend(333)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'ppend'
+>>> a.append(333)
+>>> a
+[66.25, 333, -1, 333, 1, 1234.5, 333]
+>>> a.index(333)
+1
+>>> a.remove(333)
+>>> a
+[66.25, -1, 333, 1, 1234.5, 333]
+>>> a.reverse()
+>>> a
+[333, 1234.5, 1, 333, -1, 66.25]
+>>> a.sort()
+>>> a
+[-1, 1, 66.25, 333, 333, 1234.5]
+>>> a.pop()
+1234.5
+>>> a
+[-1, 1, 66.25, 333, 333]
+>>> from collections import deque
+>>> queue = deque(["Eric", "John", "Michael"])
+>>> queue
+deque(['Eric', 'John', 'Michael'])
+>>> queue.append("Terry")
+>>> queue
+deque(['Eric', 'John', 'Michael', 'Terry'])
+>>> queue.append("Graham") 
+>>> queue.popleft()
+'Eric'
+>>> queue
+deque(['John', 'Michael', 'Terry', 'Graham'])
+>>> [x**2 for x in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> list(map(lambda x: x**2, range(10)))
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+>>> vec = [-4, -2, 0, 2, 4]
+>>> [abs(x) for x in vec]
+[4, 2, 0, 2, 4]
+>>> freshfruit = ['  banana', '  loganberry ', 'passion fruit  ']
+>>> [weapon.strip() for weapon in freshfruit]
+['banana', 'loganberry', 'passion fruit']
+>>> vec = [[1,2,3], [4,5,6], [7,8,9]]
+>>> [num for elem in vec for num in elem]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> from math import pi
+>>> [str(round(pi, i)) for i in range(1, 6)]
+['3.1', '3.14', '3.142', '3.1416', '3.14159']
+>>> m = [[1, 5, 9], [2, 6, 10], [3, 7, 11], [4, 8, 12]]
+>>> matrix = [[row[i] for row in m] for i in range(4)]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+  File "<stdin>", line 1, in <listcomp>
+IndexError: list index out of range
+>>> matrix = [[row[i] for row in m] for i in range(3)]
+>>> matrix
+[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+>>> zip(*matrix)
+<zip object at 0x7f2cb0805dc8>
+>>> list()zip(*matrix))
+  File "<stdin>", line 1
+    list()zip(*matrix))
+            ^
+SyntaxError: invalid syntax
+>>> list(zip(*matrix))
+[(1, 5, 9), (2, 6, 10), (3, 7, 11), (4, 8, 12)]
+>>> list(zip(matrix))
+[([1, 2, 3, 4],), ([5, 6, 7, 8],), ([9, 10, 11, 12],)]
+>>> a = [-1, 1, 66.25, 333, 333, 1234.5]
+>>> del a[0]
+>>> a
+[1, 66.25, 333, 333, 1234.5]
+>>> del a[2:4]
+>>> a
+[1, 66.25, 1234.5]
+>>> del a
+>>> t = 12345, 54321, 'hello!'
+>>> t
+(12345, 54321, 'hello!')
+>>> t[0]
+12345
+>>>  u = t, (1, 2, 3, 4, 5)
+  File "<stdin>", line 1
+    u = t, (1, 2, 3, 4, 5)
+    ^
+IndentationError: unexpected indent
+>>> u = t, (1, 2, 3, 4, 5)
+>>> u
+((12345, 54321, 'hello!'), (1, 2, 3, 4, 5))
+>>> t[0] = 1234
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+>>> v = ([1, 2, 3], [3, 2, 1])
+>>> v
+([1, 2, 3], [3, 2, 1])
+>>> empty = ()
+>>> singleton = 'hello',
+>>> singleton
+('hello',)
+>>> x, y, z = t
+>>> x
+12345
+>>> basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+>>> basket
+{'apple', 'banana', 'pear', 'orange'}
+>>> 'orange' in basket
+True
+>>> a = set('abracadabra')
+>>> a
+{'a', 'b', 'd', 'r', 'c'}
+>>> b = set('alacazam')
+>>> b
+{'a', 'z', 'm', 'l', 'c'}
+>>> a - b
+{'b', 'd', 'r'}
+>>> a | b
+{'a', 'd', 'z', 'l', 'b', 'c', 'm', 'r'}
+>>> a & b
+{'a', 'c'}
+>>> a ^ b
+{'d', 'z', 'l', 'b', 'm', 'r'}
+>>> {x for x in 'abracadabra' if x not in 'abc'}
+{'d', 'r'}
+>>> tel = {'jack': 4098, 'sape': 4139}
+>>> tel['guido']=4127
+>>> tel
+{'guido': 4127, 'sape': 4139, 'jack': 4098}
+>>> tel['jack']
+4098
+>>> del tel['sape']
+>>> tel
+{'guido': 4127, 'jack': 4098}
+>>> tel['irv'] = 4127
+>>> list(tel.keys())
+['guido', 'irv', 'jack']
+>>> sorted(tel.keys())
+['guido', 'irv', 'jack']
+>>> 'guido' in tel
+True
+>>> dict([('sape', 4139), ('guido', 4127), ('jack', 4098)])
+{'guido': 4127, 'sape': 4139, 'jack': 4098}
+>>> {x: x**2 for x in (2, 4, 6)}
+{2: 4, 4: 16, 6: 36}
+>>> dict(sape=4139, guido=4127, jack=4098)
+{'guido': 4127, 'sape': 4139, 'jack': 4098}
+>>> knights = {'gallahad': 'the pure', 'robin': 'the brave'}
+>>> knights.items()
+dict_items([('gallahad', 'the pure'), ('robin', 'the brave')])
+>>> for i, v in enumerate(['tic', 'tac', 'toe']):
+...     print(i, v)
+... 
+0 tic
+1 tac
+2 toe
+>>> questions = ['name', 'quest', 'favorite color']
+>>> answers = ['lancelot', 'the holy grail', 'blue']
+>>> zip(questions, answers)
+<zip object at 0x7f2ca884b048>
+>>> for q, a in zip(questions, answers):
+...     print('What is your {0}?  It is {1}.'.format(q, a))
+... 
+What is your name?  It is lancelot.
+What is your quest?  It is the holy grail.
+What is your favorite color?  It is blue.
+>>> basket = ['apple', 'orange', 'apple', 'pear', 'orange', 'banana']
+>>> set(basket)
+{'apple', 'pear', 'banana', 'orange'}
+>>> sorted(set(basket))
+['apple', 'banana', 'orange', 'pear']
+>>> import math
+>>> string1, string2, string3 = '', 'Trondheim', 'Hammer Dance'
+>>> string1 or string2 or string3
+'Trondheim'
+>>>
