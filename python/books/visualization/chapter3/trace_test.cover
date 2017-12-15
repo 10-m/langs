@@ -1,0 +1,43 @@
+       #!env python3
+       # -*- coding: utf-8 -*-
+       
+>>>>>> import csv
+>>>>>> import trace
+       
+       nobel_winners = [{
+>>>>>>     'category': 'physics',
+>>>>>>     'name': 'Albert Einstein',
+>>>>>>     'nationality': 'Swiss',
+>>>>>>     'sex': 'male',
+>>>>>>     'year': 1921
+       }, {
+>>>>>>     'category': 'physics',
+>>>>>>     'name': 'Paul Dirac',
+>>>>>>     'nationality': 'British',
+>>>>>>     'sex': 'male',
+>>>>>>     'year': 1933
+       }, {
+>>>>>>     'category': 'chemistry',
+>>>>>>     'name': 'Marle Curie',
+>>>>>>     'nationality': 'Polish',
+>>>>>>     'sex': 'female',
+>>>>>>     'year': 1911
+       }]
+       
+>>>>>> def main():
+    1:     cols = nobel_winners[0].keys()
+    1:     cols = sorted(cols)
+    1:     with open('../data/nobel_winners.csv', 'w') as f:
+    1:         f.write(','.join(cols) + '\n')
+    4:         for o in nobel_winners:
+   21:             row = [str(o[col]) for col in cols]
+    3:             f.write(','.join(row) + '\n')
+       
+    1:     with open('../data/nobel_winners.csv') as f:
+    5:         for line in f.readlines():
+    4:             print(line)
+       
+>>>>>> tracer = trace.Trace()
+>>>>>> tracer.runfunc(main)
+>>>>>> r = tracer.results()
+>>>>>> r.write_results(show_missing=True, coverdir=".")
