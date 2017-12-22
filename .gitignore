@@ -5,6 +5,7 @@
 *.tmp
 *.temp
 *.pyc
+*..sqlite
 tmp/
 #*#
 __pycache__/
