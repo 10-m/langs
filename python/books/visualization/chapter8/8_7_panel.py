@@ -13,3 +13,4 @@ pn = pd.Panel({'item1':df1, 'item2':df2})
 print(pn)
 
 print(pn['item1'])
+
