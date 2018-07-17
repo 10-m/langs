@@ -11,8 +11,8 @@ import seaborn as sb
 
 plt.rcParams['figure.figsize'] = 8, 4
 
-df = pd.read_json('../data/nobel_winners.json')
-by_gender = df.groupby('sex')
+df = pd.read_json('../data/nobel_winners_biopic_cleaned.json')
+by_gender = df.groupby('gender')
 fig = by_gender.size().plot(kind='bar').get_figure()
 fig.savefig("fist.png")
-
+print(by_gender.size())
