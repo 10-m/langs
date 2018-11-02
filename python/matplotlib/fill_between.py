@@ -4,19 +4,17 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
-months = range(12)
-month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-revenue = [16000, 14000, 17500, 19500, 21500, 21500, 22000, 23000, 20000, 19500, 18000, 16500]
+hours_reported =[3, 2.5, 2.75, 2.5, 2.75, 3.0, 3.5, 3.25, 3.25,  3.5, 3.5, 3.75, 3.75,4, 4.0, 3.75,  4.0, 4.25, 4.25, 4.5, 4.5, 5.0, 5.25, 5, 5.25, 5.5, 5.5, 5.75, 5.25, 4.75]
+exam_scores = [52.53, 59.05, 61.15, 61.72, 62.58, 62.98, 64.99, 67.63, 68.52, 70.29, 71.33, 72.15, 72.67, 73.85, 74.44, 75.62, 76.81, 77.82, 78.16, 78.94, 79.08, 80.31, 80.77, 81.37, 85.13, 85.38, 89.34, 90.75, 97.24, 98.31]
 
-y_lower = [x * 0.9 for x in revenue]
-y_upper = [x * 1.1 for x in revenue]
+plt.figure(figsize=(10,8))
 
-plt.figure()
-plt.plot(months, revenue)
+hours_lower_bound = [x * 0.8 for x in hours_reported]
+hours_upper_bound = [x * 1.2 for x in hours_reported]
 
-ax = plt.subplot()
-ax.set_xticks(months)
-ax.set_xticklabels(month_names)
-plt.fill_between(months, y_lower, y_upper, alpha=0.2)
-
+plt.plot(exam_scores, hours_reported, linewidth=2)
+plt.fill_between(exam_scores, hours_lower_bound, hours_upper_bound, alpha=0.2)
+plt.title('Time spent studying vs final exam scores')
+plt.xlabel('Score')
+plt.ylabel('Hours studying (self-reported)')
 plt.savefig('fill_between.png')

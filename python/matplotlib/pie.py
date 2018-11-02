@@ -4,12 +4,12 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 
-payment_method_names = ["Card Swipe", "Cash", "Apple Pay", "Other"]
-payment_method_freqs = [270, 77, 32, 11]
+unit_topics = ['Limits', 'Derivatives', 'Integrals', 'Diff Eq', 'Applications']
+num_hardest_reported = [1, 3, 10, 15, 1]
 
-plt.figure()
-plt.pie(payment_method_freqs, autopct = '%0.1f%%')
+plt.figure(figsize=(10,8))
+plt.pie(num_hardest_reported, autopct='%1d%%', labels=unit_topics)
 plt.axis('equal')
-plt.legend(payment_method_names)
+plt.title("Hardest Topics")
 plt.savefig('pie.png')
 plt.close('all')
