@@ -65,3 +65,5 @@ with closing(sqlite3.connect(dbname)) as conn:
     for row in c.execute('SELECT * FROM awards'):
         print(row)
 
+if os.path.exists(dbname):
+    os.remove(dbname)
