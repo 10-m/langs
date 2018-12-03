@@ -1,0 +1,23 @@
+git init
+git status
+git add <file name>
+git diff <file name>
+git commi-t -m 'Comment'
+git log
+git show HEAD: Current Commit
+
+git checkout HEAD filename: Discards changes in the working directory.
+git reset HEAD filename: Unstages file changes in the staging area.
+git reset commit_SHA: Resets to a previous commit in your commit history.
+
+git branch
+git branch new_branch
+git checkout branch_name
+git merge <from branch_name>
+git branch -d branch_name
+
+git clone remote_location clone_name
+git remote -v
+git fetch
+git merge origin/master
+git push origin your_branch_name
