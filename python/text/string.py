@@ -1,10 +1,11 @@
 #!env python3
 # -*- coding: utf-8 -*-
+import string
 
-str = 'さようなら'
-print(len(str))
+bye = 'さようなら'
+print(len(bye))
 # number of bytes
-print(len(str.encode('utf-8')))
+print(len(bye.encode('utf-8')))
 
 # repeat string
 print('hello' * 3)
@@ -49,3 +50,71 @@ rate = 108
 yen = 110
 print(f'{doller} {doller * rate}')
 print(f'{doller/100:.2%}')
+
+# strip
+print('\naaa '.strip())
+print(',aaa...'.strip(',.'))
+print('<aaa>'.lstrip('<>'))
+print('<aaa>'.rstrip('<>'))
+
+# join
+print(','.join(['a', 'b', 'c']))
+
+# str
+print(str(255))
+print(str(0xff))
+print(str(0b11111111))
+
+# 2, 8, 16進数
+print(bin(255))
+print(oct(255))
+print(hex(255))
+
+# int
+print(int('123'))
+print(int('ff', 16))
+
+# float
+print(float('3.14'))
+
+# isxxxx
+print('hello1234'.isalnum())
+print('2017'.isdecimal())
+print('\u00B2'.isdecimal())
+print('\u00B2'.isdigit())
+print('四'.isdecimal())
+print('四'.isnumeric())
+print('ⅠⅩ'.isdigit())
+print('ⅠⅩ'.isnumeric())
+print(' \n\t'.isspace())
+
+# split
+print('a<>b<>c'.split('<>'))
+
+# splitlines
+print('a\nb\nc'.splitlines())
+
+# ljust, center, rjust, zfill
+print('Python'.ljust(10))
+print('Python'.ljust(10, '-'))
+print('Python'.center(10))
+print('Python'.rjust(10))
+print('123'.zfill(6))
+print('+123'.zfill(6))
+print('-123'.zfill(6))
+
+# encode, decode
+utf8 = 'こんにちは'.encode()
+sjis = 'こんにちは'.encode(encoding="shift-jis")
+print(utf8)
+print(sjis)
+print(utf8.decode())
+print(sjis.decode(encoding="shift-jis"))
+
+# ord, chr
+print(ord('a'))
+print(chr(ord('a')))
+
+# epandtab
+print("Hi\tLow\tGood\tOK".expandtabs())
+print("Hi\tLow\tGood\tOK".expandtabs(tabsize=4))
