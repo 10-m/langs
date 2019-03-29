@@ -18,3 +18,25 @@ print(isinstance(tcal, Calendar))
 
 # id
 print(id(tcal))
+
+# issubclass
+import calendar
+print(issubclass(calendar.TextCalendar, calendar.Calendar))
+
+# globals, locals
+def test(num):
+    msg = 'hello' * num
+    print('---locals')
+    print(locals())
+
+num = 3
+test(num)
+print('---globals')
+print(globals())
+
+# is (check the same object)
+l1 = ['a', 'b', 'c']
+l2 = ['a', 'b', 'c']
+l3 = l1
+print(l1 is l2)
+print(l1 is l3)
