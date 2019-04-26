@@ -82,3 +82,54 @@ print(l)
 # count
 years = [1965, 1959, 2001, 1987, 1959, 2011]
 print(years.count(1959))
+
+# sorted
+ages = [9, 15, 13, 1, 9, 77, 55, 44, 12] 
+print(sorted(ages))
+print(sorted(ages, reverse=True))
+
+str1 = [{"good":3}, {"bye":2}, {"Good":1}, {"Bye":0}] 
+def lower(element):
+    return list(element.values())[0]
+
+print(sorted(str1, key=lower))
+print(sorted(str1, key=lambda el: list(el.values())[0]))
+
+# sort
+ages = [9, 15, 13, 1, 9, 77, 55, 44, 12] 
+ages.sort()
+print(ages)
+
+# max, min
+print(max(ages))
+print(min(ages))
+print(min(str1, key=lambda el: list(el.values())[0]))
+
+# copy
+num1 = [1,2]
+num2 = num1.copy()
+print(id(num1))
+print(id(num2))
+
+# enumerate
+for i, c in enumerate(['a', 'b', 'c']):
+    print(i, c)
+
+# range
+for i in range(5):
+    print(i)
+
+for i in range(1, 5):
+    print(i)
+
+for i in range(1, 5, 2):
+    print(i)
+
+# sum
+print(sum([1,2,3]))
+print(sum(range(101)))
+
+# filter
+heiseis = [20, 15, 4, 29, 1, 11, 10]
+for s in filter(lambda h: h >= 10, heiseis):
+    print(s)
