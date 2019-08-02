@@ -40,3 +40,9 @@ l2 = ['a', 'b', 'c']
 l3 = l1
 print(l1 is l2)
 print(l1 is l3)
+
+# all
+print(all([True, False, False]))
+
+# any
+print(any([True, False, False]))
