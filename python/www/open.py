@@ -8,6 +8,8 @@ from multiprocessing import Process
 import urllib.parse
 import urllib.request
 
+import http.client
+
 class TestServer(BaseHTTPRequestHandler):
     def handle_headers(self):
         for k, v in self.headers.items():
@@ -29,12 +31,13 @@ class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
 
 def run():
     httpd = ThreadedHTTPServer(("0.0.0.0", 8000), TestServer)
+    httpd.allow_reuse_address = True
     try:
         httpd.handle_request()
     except KeyboardInterrupt:
         pass
     httpd.server_close()
-
+ 
 # urlopen
 import urllib.request
 res = urllib.request.urlopen('http://impress.co.jp/')
@@ -65,4 +68,14 @@ buf = "Hello World".encode()
 req = urllib.request.Request(url, buf)
 with urllib.request.urlopen(req) as res:  
     print(res.read().decode())
+p.join()
+
+# add_header
+p = Process(target=run)
+p.start()
+url = "http://localhost:8000"
+req = urllib.request.Request(url)
+req.add_header("X-MY-HEADER", "python_standard_library")
+with urllib.request.urlopen(req) as res:
+    html = res.read().decode("utf-8")
 p.join()
