@@ -1,0 +1,41 @@
+h1 {
+  /* Color */
+  color: black;
+
+  /* Font Size */
+  font-size: 2em;
+
+  /* Font Family */
+  font-family: Georgia;
+
+  /* Font Weight */
+  font-weight: bold;
+
+  /* Text Align */
+  text-align: center;
+}
+
+.caption {
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 14px;
+  margin-left: 20px;
+  padding: 10px;
+  position: relative;
+  top: 80%;
+  width: 60%;
+  background-color: white;
+  color: black;
+  
+  /* Opacity */
+  opacity: 0.75;
+}
+
+/* Background Image */
+.image {
+  background-image: url("./soccer.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}

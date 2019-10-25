@@ -1,0 +1,49 @@
+/* Tag Name */
+h2 {
+  color: maroon;
+}
+
+/* Class Name */
+.title {
+  color: teal;
+}
+
+/* Multiple Classes */
+.uppercase {
+  font-family: cursive;
+  text-transform: capitalize;
+}
+
+/* ID Name */
+/* IDs override the styles of tags and classes. */
+#article-title {
+  text-transform: uppercase;
+}
+
+/* Chaining Selectors */
+h2.destination {
+  font-family: cursive;
+}
+
+/* Nested Elements */
+/* the h5 elements in the description class will not change color. They will continue to be teal. */
+h5 {
+  color: rebeccapurple;
+}
+
+.description h5 {
+  color: teal;
+}
+
+/* !important changes priority
+h5 {
+  color: rebeccapurple !important;
+}
+*/
+
+/* Multiple Selectors */
+h5,
+p {
+  font-family: Georgia;
+}
+
