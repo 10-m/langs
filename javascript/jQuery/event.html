@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='stylesheet' type='text/css' href='./style.css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</head>
+<body>
+
+<table align='center'>
+  <tr>
+    <th class='header-small'>
+      <div class='header-text'>Buttons</div>
+    </th>
+    <th class='header-big'>
+      <div class='image-text'>Images</div>
+    </th>
+  </tr>
+  
+  <tr>
+    <th class='button-col'>
+      <button class="mouseenter-button">
+        <div class='button-text'>MOUSE ENTER</div>
+      </button>
+    </th>
+    <th rowspan=4 class='img-col'>
+      <img src="./picture.jpeg" class ="first-image">
+    </th> 
+  </tr>
+  <tr>
+    <th class='button-col'>
+      <button class="mouseleave-button">
+        <div class='button-text'>MOUSE LEAVE</div>
+      </button>
+    </th> 
+  </tr>
+  <tr>
+    <th class='button-col'>
+      <button class="change-event-button">
+        <div class='button-text'>CHANGE EVENT</div>
+      </button>
+    </th> 
+  </tr>
+  <tr>
+    <th class='button-col'>
+      <button class="current-target-button">
+        <div class='button-text'>CURRENT TARGET</div>
+      </button>
+    </th> 
+  </tr>
+
+</table>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src='./event.js'></script>
+</body>
+</html>
