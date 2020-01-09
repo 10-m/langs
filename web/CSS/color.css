@@ -1,0 +1,42 @@
+#fore_and_background_color {
+  color: red;
+  background-color: blue;
+}
+
+#hexadecimal {
+  background-color: #9EB599;
+}
+
+#RGB {
+  background-color: rgb(143, 188, 143);
+}
+
+#hsl {
+  background-color: hsl(120, 60%, 70%);
+}
+
+#opacity {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  max-width: 75vw;
+}
+
+#opacity #rgba, #opacity #hsla {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  margin: 15vh 0 0 15vw;
+  padding: 0;
+  width: 35vw;
+  height: 59vh;
+}
+
+#opacity #rgba {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+#opacity #hsla {
+  background-color: hsla(325, 50%, 50%, 0.6);
+}

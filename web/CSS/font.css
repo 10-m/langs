@@ -1,0 +1,50 @@
+#font_family {
+  border: 1px dotted red;
+  font-family: Helvetica;
+}
+
+#font_weight {
+  border: 1px dotted red;
+  font-weight: bold;
+}
+
+#font_style {
+  border: 1px dotted red;
+  font-weight: italic;
+}
+
+#word_spacing {
+  border: 1px dotted red;
+  word-spacing: 1em;
+}
+
+#letter_spacing {
+  border: 1px dotted red;
+  letter-spacing: 0.5em;
+}
+
+#text_transformation {
+  border: 1px dotted red;
+  text-transform: uppercase;
+}
+
+#text_alignment {
+  border: 1px dotted red;
+  text-align: center;
+}
+
+#line_height {
+  border: 1px dotted red;
+  width: 10em;
+  line-height: 1.4;
+}
+
+#serif {
+  border: 1px dotted red;
+  font-family: serif;
+}
+
+#sans_serif {
+  border: 1px dotted red;
+  font-family: sans-serif;
+}
