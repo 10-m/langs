@@ -33,6 +33,10 @@ nums = [1, 2, 3, 4, 5, 6, 7]
 nums.append(8)
 print(nums)
 
+# extend
+nums.extend([9,10])
+print(nums)
+
 # insert
 nums = [1, 2, 3, 4, 5, 6, 7]
 nums.insert(1, 10)
@@ -48,7 +52,7 @@ print(nums)
 del nums[2:4]
 print(nums)
 
-# pos
+# pop
 nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 last = nums.pop()
 print(last)
@@ -133,3 +137,18 @@ print(sum(range(101)))
 heiseis = [20, 15, 4, 29, 1, 11, 10]
 for s in filter(lambda h: h >= 10, heiseis):
     print(s)
+
+# unpack for tuple
+python = ('Python', 1991)
+ruby = ('Ruby', 1995)
+go = ('Go', 2009)
+
+programming_lang = (python, ruby, go)
+
+for lang in programming_lang:
+    name, year = lang
+    print(name, year)
+
+# use tuple as key for dict
+tuple_key_dict = {(1, 2): 'A'}
+print(tuple_key_dict[(1, 2)])
