@@ -16,10 +16,8 @@ print(message[2:4])
 print(message[:5])
 print(message[-1]) # 最後の文字
 print(message[:-3])  # 最初から最後から3文字目
-
-print(','.join(['A', 'B', 'C']))
-print('aabbcc'.replace('bb', 'BB'))
-print(len('aaa'))
+print(message[::2]) # ステップ, 2文字ごと
+print(message[::-1]) # reverse
 
 s = 'aaabbbccc'
 if 'bbb' in s:
@@ -33,14 +31,6 @@ print(len(bye))
 # number of bytes
 print(len(bye.encode('utf-8')))
 
-# repeat string
-print('hello' * 3)
-
-# upper, lower, swapcase
-print('Abc'.upper())
-print('Abc'.lower())
-print('Abc'.swapcase())
-
 # slice
 print('abcd'[0]) # a
 print('abcd'[1]) # b
@@ -53,24 +43,8 @@ print('sample.txt'[:-4]) # sample
 print('0123456789'[::2]) # 02468
 print('0123456789'[::-1]) # 9876543210
 
-# replace
-print("good new good new good".replace("good", "bad"))
-print("good new good new good".replace("good", "bad", 2))
-
 # translate
 print("AabcD".translate(str.maketrans("abc", "ABC")))
-
-# count
-print("good bad good".count("good"))
-
-# strip
-print('\naaa '.strip())
-print(',aaa...'.strip(',.'))
-print('<aaa>'.lstrip('<>'))
-print('<aaa>'.rstrip('<>'))
-
-# join
-print(','.join(['a', 'b', 'c']))
 
 # str
 print(str(255))
@@ -130,3 +104,45 @@ print(chr(ord('a')))
 # epandtab
 print("Hi\tLow\tGood\tOK".expandtabs())
 print("Hi\tLow\tGood\tOK".expandtabs(tabsize=4))
+
+# operator
+s = 'pine' 'apple'
+print(s)
+s = ('pine'
+     'apple')
+print(s)
+print('Yes' * 3)
+print('is' in 'this')
+
+# is method
+print("'abc'.isalpha():", 'abc'.isalpha())
+print("'ab3'.isalpha():", 'ab3'.isalpha())
+print("'12'.isdigit():", '12'.isdigit())
+print("'abc'.islower():", 'abc'.islower())
+print("'ABC'.isupper():", 'ABC'.isupper())
+print("'Abc'.isupper():", 'Abc'.isupper())
+print("'Abc'.lower():", 'Abc'.lower())
+print("'Abc'.upper():", 'Abc'.upper())
+
+# find method
+print("'ABCAB'.count('AB'):", 'ABCAB'.count('AB'))
+print("'ABC'.find('X'):", 'ABC'.find('X'))
+print("'ABC'.index('B'):", 'ABC'.index('B'))
+print("'ABC'.endswith('BC'):", 'ABC'.endswith('BC'))
+print("'ABC'.startswith('AB'):", 'ABC'.startswith('AB'))
+print("'ABC'.startswith('BA'):", 'ABC'.startswith('BA'))
+print("'ABC'.startswith(('AB', 'BA')):", 'ABC'.startswith(('AB', 'BA')))
+print("'Abc'.swapcase()", 'Abc'.swapcase())
+
+# transform method
+print("'...'.splitlines()", """\
+Alice
+Bob
+Carol""".splitlines())
+print("'abcd'.replace('bc', '-'):", 'abcd'.replace('bc', '-'))
+print("'1 2 3'.split():", '1 2 3'.split())
+print("'1<>2<><><3'.split('<>'):", '1<>2<><><3'.split('<>'))
+print("'--abc--'.strip('-'):", '--abc--'.strip('-'))
+print("'--abc--'.rstrip('-'):", '--abc--'.rstrip('-'))
+print("'--abc--'.lstrip('-'):", '--abc--'.lstrip('-'))
+print("'-'.join('1 2 3'.split()):", '-'.join('1 2 3'.split()))
