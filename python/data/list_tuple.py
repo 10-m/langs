@@ -115,6 +115,10 @@ num2 = num1.copy()
 print(id(num1))
 print(id(num2))
 
+# clear
+num2.clear()
+print(num2)
+
 # enumerate
 for i, c in enumerate(['a', 'b', 'c']):
     print(i, c)
@@ -138,17 +142,8 @@ heiseis = [20, 15, 4, 29, 1, 11, 10]
 for s in filter(lambda h: h >= 10, heiseis):
     print(s)
 
-# unpack for tuple
-python = ('Python', 1991)
-ruby = ('Ruby', 1995)
-go = ('Go', 2009)
-
-programming_lang = (python, ruby, go)
-
-for lang in programming_lang:
-    name, year = lang
-    print(name, year)
-
-# use tuple as key for dict
-tuple_key_dict = {(1, 2): 'A'}
-print(tuple_key_dict[(1, 2)])
+# all, any
+for v1 in [True, False]:
+    for v2 in [True, False]:
+        print('any({}, {}) = {}'.format(v1, v2, any([v1, v2])))
+        print('all({}, {}) = {}'.format(v1, v2, all([v1, v2])))
