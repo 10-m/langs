@@ -18,9 +18,10 @@ s1.update(["black", "yellow"])
 print(s1)
 
 # operator
-print({1, 4, 5} | { 4, 3, 20})
-print({1, 4, 5} - { 4, 3, 20})
-print({1, 4, 5} ^ { 4, 3, 20})
+print({1, 4, 5} & { 4, 3, 20}) # s1.intersection(s2)
+print({1, 4, 5} | { 4, 3, 20}) # s1.union(s2)
+print({1, 4, 5} - { 4, 3, 20}) # s1.difference(s2)
+print({1, 4, 5} ^ { 4, 3, 20}) # s1.symmetric_difference(s2)
 print({1, 2} <= {1, 2})
 print({1, 2} <= {1, 2, 3})
 print({4, 5, 6} > {4, 5, 6})
