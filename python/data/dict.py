@@ -49,3 +49,7 @@ langs3 = langs1.copy()
 langs1["Python"] = 2000
 print(langs2)
 print(langs3)
+
+# clear
+langs3.clear()
+print(langs3)
