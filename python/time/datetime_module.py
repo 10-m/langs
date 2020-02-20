@@ -1,24 +1,37 @@
 #!env python3
 # -*- coding: utf-8 -*-
-from datetime import datetime
-from datetime import timedelta
+from datetime import date, time, datetime, timedelta
 import calendar
 
-# コンストラクタ
-t = datetime(2017, 11, 22)
-print(t)
-print(datetime(2016, 5, 5, 14, 15, 30))
+## date
+d = date(2019, 6, 7)
+print(d)  # 2019-06-07
+print(d.weekday())  # 4
+print(d.year)  # 2019
+print(d.month)  # 6
+print(d.day)  # 7
+print(f'{d:%Y/%m/%d}')
 
+## time
+tm = time(23, 45, 59)
+print(tm)  # 23:45:59
+print(tm.hour)
+print(tm.minute)
+print(tm.second)
+print(f'{tm:%H:%M:%S}')  # 23:45:59
 
-# isoformat
-print(t.isoformat())
+## datetime
+dt = datetime(2019, 6, 7, 23, 45, 59)
+print(dt.date())  # 2019-06-07
+print(dt.day)  # 7
+print(dt.hour)  # 23
+print(f'{dt:%Y-%m-%d %H:%M:%S}')  # 2019-06-07 23:45:59
+print(dt.isoformat())
+print(dt.timetuple())
+print(dt.weekday())
+print(datetime.today())
 
-# timetuple
-print(t.timetuple())
-
-# weekday
-print(t.weekday())
-
+## calendar
 c = calendar.TextCalendar()
 print(c.formatmonth(2017,11))
 
@@ -34,16 +47,6 @@ print(now.day)
 print(now.hour)
 print(now.minute)
 print(now.second)
-
-# today
-print(datetime.today())
-
-# time
-d = datetime(2000,1,1,hour=12, minute=34, second=56) 
-print(d.hour)
-print(d.minute)
-print(d.second)
-print(d.microsecond)
 
 # strptime
 str_day = '1600/10/21'
@@ -64,6 +67,6 @@ days1 = elapsed1.days
 print("{0} days to new century".format(days0))
 print("You have lived {0} days so far".format(days1))
 
-# timedelta
+## timedelta
 print(datetime.now() - timedelta(days=2))
 print(datetime.now() > (datetime.now() - timedelta(days=2)))
