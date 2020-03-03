@@ -4,14 +4,19 @@
 items = ('cup', 'art', 'box')
 print('items:', items)
 
-print('enumerate:')
-print(list(enumerate(items)))
+# range
+print(list(range(10)))
+print(list(range(1, 11)))
 
-print('zip:')
+# enumerate
+print(list(enumerate(items)))
+print(list(enumerate(items, start=1)))
+
+# zip
 print(list(zip(range(3), items)))
 
-print('sorted:')
+# sorted
 print(sorted(items))
 
-print('reversed:')
+# reversed
 print(list(reversed(items)))
