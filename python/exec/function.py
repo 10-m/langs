@@ -1,6 +1,19 @@
 #!env python3
 # -*- coding: utf-8 -*-
 
+print(complex(real=3, imag=5))  # キーワード引数
+print(complex(**{'real': 3, 'imag': 5}))  # キーワード引数
+print(complex(3, 5))  # 位置引数
+print(complex(*(3, 5)))  # 位置引数
+
+args = [1, 2, 3]
+kwargs = {'sep': '-', 'end': '.'}
+
+print('<<< ', end='')
+print(*args, **kwargs)
+print(' >>>')
+
+
 # 任意個数の位置引数
 def func(*args):
     print(args)  # ('hello', 'world')
@@ -23,6 +36,11 @@ func(1, 2, 3, abc=1, xyz='xyz')
 def func(*args, **kwargs):
     print(*args, **kwargs)
 func(1, 2, 3, sep='-')
+
+# デフォルト引数
+def func(name="Unknown", id=0):
+    print(name, id)
+func()
 
 # ラムダ式
 func = lambda a, b: a + b
