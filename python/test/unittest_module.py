@@ -9,6 +9,9 @@ class Calc:
     def sub(self, a, b):
         return a - b
 
+    def is_even(self, num):
+        return num // 2
+
 class CalcTest1(unittest.TestCase):
     def test_add(self):
         c = Calc()
@@ -21,6 +24,12 @@ class CalcTest1(unittest.TestCase):
         expected = 3
         actual = c.sub(5, 2)
         self.assertEqual(expected, actual)
+
+    def test_is_even(self):
+        self.assertTrue(Calc().is_even(2))
+
+    def test_is_odd(self):
+        self.assertFalse(Calc().is_even(1))
 
 class CalcTest2(unittest.TestCase):
 
