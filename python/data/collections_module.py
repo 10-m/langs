@@ -7,6 +7,8 @@ count = Counter(["apple", "melon", "orange", "apple", "orange", "apple"])
 print(count)
 print(count.most_common(2))
 print(count.most_common(1))
+for k, v in count.items():
+    print(k + ':' + str(v))
 
 # defaultdict
 people = ((20,"Taro"),(23,"Ken"),(21,"Rin"),(20,"Joe"),(22,"Risa"))
