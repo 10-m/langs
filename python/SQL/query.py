@@ -48,6 +48,9 @@ with closing(sqlite3.connect(dbname)) as conn:
     select = 'SELECT DISTINCT genre FROM movies'
     print_and_exec(select, c)
 
+    select = 'SELECT * FROM movies WHERE id IN (1, 51)'
+    print_and_exec(select, c)
+
     select = 'SELECT * FROM movies WHERE year > 2009'
     print_and_exec(select, c)
 
