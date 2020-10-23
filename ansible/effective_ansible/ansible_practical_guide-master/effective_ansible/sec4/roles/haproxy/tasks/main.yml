@@ -1,0 +1,8 @@
+---
+# tasks file for ./roles/haproxy
+
+- name: haproxy / main / Load service variables
+  include_vars: roles/haproxy/vars/{{ cluster_service }}.yml
+- include: roles/haproxy/tasks/check_install.yml
+- include: roles/haproxy/tasks/install.yml
+- include: roles/haproxy/tasks/configure.yml

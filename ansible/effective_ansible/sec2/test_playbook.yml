@@ -1,0 +1,16 @@
+---
+- hosts: test_servers
+  vars:
+    local_home: "{{ lookup('env', 'HOME') }}"
+  tasks:
+  - name: create directory
+    file:
+       path: "{{ local_home }}/tmp/ansible"
+       state: directory 
+       mode: 0755
+
+  - name: copy file
+    copy:
+       src: /etc/hosts
+       dest: "{{ local_home }}/tmp/ansible"
+       mode: 0644

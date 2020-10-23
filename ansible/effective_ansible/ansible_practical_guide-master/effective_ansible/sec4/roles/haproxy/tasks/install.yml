@@ -1,0 +1,8 @@
+---
+# tasks file for ./roles/haproxy
+
+- name: install / Install required packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ haproxy_packages }}"

@@ -1,0 +1,79 @@
+---
+- name: Initialize OS setting for Windows Servers
+  hosts: windows_servers
+
+  vars:
+    win_shared_folder: C:/shares/documents
+    required_packages:
+      - googlechrome
+      - jre8
+      - notepadplusplus
+
+  tasks:
+    - name: Setup Timezones
+      win_timezone:
+        timezone: "Tokyo Standard Time"
+      # https://technet.microsoft.com/ja-jp/library/cc749073(v=ws.10).aspx
+
+    - name: Sync local time
+      raw: Set-Date (Invoke-WebRequest -Uri https://ntp-a1.nict.go.jp/cgi-bin/time).Headers.Date
+
+    - name: Create windows users
+      win_user:
+        name: User01
+        password: '@nsible01'
+        groups: "Administrators"
+        description: "Ansible Test User01"
+        password_never_expires: yes
+
+    - name: Create shared folder
+      win_file:
+        path: "{{ win_shared_folder }}"
+        state: directory
+
+    - name: Allow public share folder
+      win_share:
+        name: documents
+        description: Shared documents
+        state: present
+        path: "{{ win_shared_folder }}"
+        full: Administrators,Ansible
+
+   # https://support.microsoft.com/ja-jp/kb/182569
+   # http://www.atmarkit.co.jp/ait/articles/1501/16/news085.html
+    - name: Setup registory key
+      win_regedit:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+        data: "{{ item.data }}"
+        datatype: "{{ item.datatype|default('dword') }}"
+      with_items:
+        - { key: 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings', value: ProxyServer, data: "16.153.99.11:8080", datatype: string }
+        - { key: 'HKCU:\SOFTWARE\Microsoft\ServerManager', value: DoNotOpenServerManagerAtLogon, data: 1 }
+        - { key: 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server', value: fDenyTSConnections, data: 0 }
+
+    - name: Install Telnet Client
+      win_feature:
+        name: "Telnet-Client"
+        include_sub_features: yes
+        include_management_tools: yes
+
+    - name: Install required packages
+      win_chocolatey:
+        name: "{{ item }}"
+      with_items: "{{ required_packages }}"
+
+#    - name: windows / configure / Download required packages
+#      win_copy:
+#        src: "ChromeStandaloneSetup64.exe"
+#        dest: "{{ win_shared_folder }}\\ChromeStandaloneSetup64.exe"
+#
+#    - name: windows / configure / Install required packages
+#      win_package:
+#        name: "Google Chrome"
+#        path: "{{ win_shared_folder }}\\ChromeStandaloneSetup64.exe"
+#        Product_Id: "{{ item.id }}"
+#
+    - name: Setup hostname and Reboot
+      raw: Rename-Computer -NewName "{{ inventory_hostname }}" -Force -Restart
+      when: ansible_hostname != inventory_hostname|upper
