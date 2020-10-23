@@ -1,7 +1,0 @@
----
-# tasks file for ./roles/wordpress
-
-- name: install / Install required packages
-  yum:
-    name: git
-    state: present
