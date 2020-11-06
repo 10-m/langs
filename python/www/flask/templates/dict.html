@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+{% for a_day, duty in duties.items() %}
+    <h3>{{ a_day }}</h3>
+    {{ duty }}
+{% endfor %}
+<body>
+</body>
+</html>
